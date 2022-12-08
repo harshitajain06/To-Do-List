@@ -3,18 +3,18 @@ import './style.css';
 const tasks = [
   {
     description: 'Exercise',
-    completed: 'true',
-    index: '0',
+    completed: true,
+    index: 0,
   },
   {
     description: 'Walking',
-    completed: 'false',
-    index: '1',
+    completed: false,
+    index: 1,
   },
   {
     description: 'Dinners',
-    completed: 'true',
-    index: '2',
+    completed: true,
+    index: 2,
   },
 ];
 
