@@ -12,3 +12,48 @@
   background: url('./icon.png');
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
+body {
+  border: 2px solid black;
+  width: 400px;
+  position: relative;
+  left: 450px;
+  top: 200px;
+}
+
+h1 {
+  font-size: large;
+}
+
+.tododiv {
+  width: 400px;
+}
+
+.main {
+  text-align: left;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  height: 30px;
+}
+
+.task {
+  padding-right: 280px;
+}
+
+.clearAll {
+  width: 400px;
+  height: 50px;
+}
+
+.input1 {
+  width: 393px;
+  height: 30px;
+}
+
+.fa-repeat {
+  padding-left: 280px;
+}

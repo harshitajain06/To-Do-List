@@ -1,30 +1,51 @@
-import _ from 'lodash';
-import printMe from './print.js';
 import './style.css';
-import Icon from './icon.png';
-import Data from './data.xml';
-import Notes from './data.csv';
+
+const tasks = [
+  {
+    description: 'Exercise',
+    completed: 'true',
+    index: '0',
+  },
+  {
+    description: 'Walking',
+    completed: 'false',
+    index: '1',
+  },
+  {
+    description: 'Dinners',
+    completed: 'true',
+    index: '2',
+  },
+];
 
 function component() {
   const element = document.createElement('div');
-  const btn = document.createElement('button');
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
-  // Add the image to our existing div.
-  const myIcon = new Image();
-  myIcon.src = Icon;
-
-  element.appendChild(myIcon);
-
-  console.log(Data);
-  console.log(Notes);
-
-  btn.innerHTML = 'Click me and check the console!';
-  btn.onclick = printMe;
-
-  element.appendChild(btn);
+  element.className = 'tododiv';
+  element.innerHTML = `
+  <div class="content">
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label class="task">${tasks[0].description}</label>
+  <span><i class="fa-solid fa-ellipsis-vertical"></i></span><br>
+  </div>
+  <div>
+  <hr>
+  <div class="content">
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label class="task">${tasks[1].description}</label>
+  <span><i class="fa-solid fa-ellipsis-vertical"></i></span><br>
+  </div>
+  <hr>
+  <div class="content">
+  <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+  <label class="task">${tasks[2].description}</label>
+  <span><i class="fa-solid fa-ellipsis-vertical"></i></span><br>
+  </div>
+  <div>
+  <div>
+  <button class="clearAll" type="button">Clear all Completed</button>
+  </div>
+  `;
 
   return element;
 }
