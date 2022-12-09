@@ -9,13 +9,42 @@
 </head>
 
 <body>
-    <div class="main">
-        <h1>Todays to do<span><i class="fa-solid fa-repeat"></i></span></h1><br>
-            <input class="input1" type="text" id="fname" placeholder="Add To Your List">
-            <hr>
-            <div id="list"></div>
-        
-    </div>
+<main>
+      <div class="container">
+        <div class="input-container">
+          <p class="mainH">Todays to do</p>
+          <div>
+            <form action="#">
+              <input
+                id="todo-input"
+                type="text"
+                placeholder="Add to your list"
+                required
+              />
+              <button type="submit" id="addBtn">
+                <img
+                  class="returnImg"
+                  id="returnImg"
+                  src="./assets/return.svg"
+                  alt="returnImg"
+                />
+              </button>
+            </form>
+          </div>
+
+          <div class="to-do-list" id="mainContainer">
+            <table>
+              <thead></thead>
+              <tbody class="tbody" id="tbody"></tbody>
+            </table>
+            <button type="button" id="completedBtn" class="completedBtn">
+             Clear all completed.
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
 </body>
 
 </html>
