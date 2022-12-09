@@ -108,8 +108,6 @@ class ToDoList {
     });
   }
 
-  
-
   static updateDescription(index, desc, tasks) {
     tasks.description = desc;
     return [tasks];
@@ -135,14 +133,13 @@ class ToDoList {
           input.value = editItem;
           input.classList.add('edit');
 
-          input.addEventListener('keypress', function (e) {
+          input.addEventListener('keypress', (e) => {
             editPara.textContent = input.value;
             todo.description = input.value;
             localStorage.setItem('todoL', JSON.stringify(todoL));
-            if (e.key === "Enter"){
+            if (e.key === 'Enter') {
               window.location.reload();
-          }
-      
+            }
           });
 
           tdHide.appendChild(input);
