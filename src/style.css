@@ -1,59 +1,144 @@
-@font-face {
-  font-family: 'MyFont';
-  src:
-    url('./my-font.woff2') format('woff2'),
-    url('./my-font.woff') format('woff');
-  font-weight: 600;
-  font-style: normal;
-}
-
-.hello {
-  color: red;
-  background: url('./icon.png');
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  border: 2px solid black;
-  width: 400px;
-  position: relative;
-  left: 450px;
-  top: 200px;
+  background-color: #dc2e2e;
 }
 
-h1 {
-  font-size: large;
-}
-
-.tododiv {
-  width: 400px;
-}
-
-.main {
-  text-align: left;
-  height: auto;
-}
-
-.content {
+.container {
+  background-color: white;
+  width: 360px;
+  margin: 190px auto;
   display: flex;
-  justify-content: space-between;
-  height: 30px;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }
 
-.task {
-  padding-right: 280px;
+.to-do-list {
+  width: 100%;
 }
 
-.clearAll {
-  width: 400px;
-  height: 50px;
+table {
+  width: 100%;
+  background-color: white;
 }
 
-.input1 {
-  width: 393px;
-  height: 30px;
+table a {
+  text-decoration: none;
 }
 
-.fa-repeat {
-  padding-left: 280px;
+table td {
+  width: 23.33%;
+}
+
+table td .paragraph {
+  color: red;
+}
+
+.strike-through {
+  font-style: italic;
+  text-decoration: line-through;
+}
+
+table td img {
+  width: 30px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  position: relative;
+}
+
+.completedBtn {
+  width: 100%;
+  height: 40px;
+  border: none;
+  margin-top: 20px;
+  color: rgb(82, 75, 75);
+  cursor: pointer;
+}
+
+#addBtn {
+  background-color: white;
+  border: none;
+  position: absolute;
+  left: 320px;
+  height: 40px;
+  margin: auto;
+}
+
+.mainH {
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+.kebabImg {
+  opacity: 0.5;
+  cursor: move;
+}
+
+#returnImg {
+  cursor: pointer;
+}
+
+#addBtn img {
+  width: 20px;
+}
+
+#todo-input {
+  width: 100%;
+  margin-bottom: 10px;
+  border: none;
+  height: 40px;
+}
+
+.clear-completed {
+  width: 100%;
+  height: 40px;
+  border: none;
+  color: rgb(64, 60, 60);
+}
+
+.edit {
+  width: 310px;
+  padding: 0 20px 0 5px;
+  margin: auto;
+  left: -25px;
+  right: 0;
+  position: absolute;
+  height: 40px;
+  border: none;
+}
+
+.edit:focus {
+  outline: none;
+}
+
+.hide {
+  display: none;
+}
+
+.editItem {
+  display: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::placeholder {
+  font-style: italic;
+}
+
+td p {
+  margin-left: 0;
+}
+
+.fa-trash {
+  color: gray;
 }
