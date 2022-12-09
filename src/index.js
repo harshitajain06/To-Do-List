@@ -27,17 +27,17 @@ class ToDoList {
         <td> <input class='check'  id='checkBox' type="checkbox" checked /><td>
         <td><p class='paragragh strike-through'> ${todo.description}</p><td>
         <td class='hide'>${todo.id}</td>
-        <td><img class='kebabImg' src="${dots}" alt="" /></td>
-        <td><a href="#" class='delete'>🗑</a><td><hr>
+        <td><img class='dotsImg' src="${dots}" alt="" /></td>
+        <td><a href="#" class='delete'>🗑</a><td>
         `;
     } else {
       row.innerHTML = `
         <td> <input class='check'  id='checkBox' type="checkbox" /><td>
         <td><p class='paragragh'> ${todo.description}</p><td>
         <td class='hide'>${todo.id}</td>
-        <td><img class='kebabImg' src="${dots}" alt="" /></td>
+        <td><img class='dotsImg' src="${dots}" alt="" /></td>
     
-        <td><a href="#" class='delete'>🗑</a><td><hr>
+        <td><a href="#" class='delete'>🗑</a><td>
     
         `;
     }
@@ -108,13 +108,15 @@ class ToDoList {
     });
   }
 
+  
+
   static updateDescription(index, desc, tasks) {
     tasks.description = desc;
     return [tasks];
   }
 
   static editInput(id, e, tdHide, editPara) {
-    if (e.children[0].classList.contains('dots')) {
+    if (e.children[0].classList.contains('dotsImg')) {
       const todoL = ToDoList.getToDo();
       id = Number(id);
       todoL.forEach((todo) => {
@@ -133,10 +135,14 @@ class ToDoList {
           input.value = editItem;
           input.classList.add('edit');
 
-          input.addEventListener('keypress', () => {
+          input.addEventListener('keypress', function (e) {
             editPara.textContent = input.value;
             todo.description = input.value;
             localStorage.setItem('todoL', JSON.stringify(todoL));
+            if (e.key === "Enter"){
+              window.location.reload();
+          }
+      
           });
 
           tdHide.appendChild(input);
