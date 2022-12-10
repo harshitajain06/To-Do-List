@@ -108,6 +108,41 @@ class ToDoList {
     });
   }
 
+  static checkboxCompleted(id, status) {
+    const todoL = ToDoList.getToDo();
+    id = Number(id.textContent);
+
+    todoL.forEach((x) => {
+      if (x.id === id) {
+        if (status) {
+          x.completed = true;
+        } else {
+          x.completed = false;
+        }
+      }
+      localStorage.setItem('todoL', JSON.stringify(todoL));
+    });
+    return todoL;
+  }
+
+  static removeCompleted() {
+    const todoL = ToDoList.getToDo();
+
+    const notCompleted = todoL.filter((x) => x.completed === false);
+    localStorage.setItem('todoL', JSON.stringify(notCompleted));
+    ToDoList.resetId();
+    window.location.reload();
+  }
+
+  static deleteCompletedTask() {
+    const todoL = ToDoList.getToDo();
+
+    const notCompleted = todoL.filter((x) => x.completed === false);
+    localStorage.setItem('todoL', JSON.stringify(notCompleted));
+    Storage.resetId();
+    // window.location.reload();
+  }
+
   static updateDescription(index, desc, tasks) {
     tasks.description = desc;
     return [tasks];
@@ -150,6 +185,9 @@ class ToDoList {
 }
 
 document.addEventListener('DOMContentLoaded', ToDoList.displayToDo);
+document.getElementById('completedBtn').addEventListener('click', () => {
+  ToDoList.removeCompleted();
+});
 
 document.querySelector('form').addEventListener('submit', (e) => {
   e.preventDefault();
