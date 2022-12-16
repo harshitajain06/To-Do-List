@@ -1,5 +1,5 @@
 import './style.css';
-import ToDoList from "./crud.js";
+import ToDoList from './crud.js';
 import ToDo from './toDoList.js';
 
 document.addEventListener('DOMContentLoaded', ToDo.displayToDo);
@@ -40,5 +40,3 @@ document.getElementById('mainContainer').addEventListener('click', (e) => {
       .textContent,
   );
 });
-
-

@@ -1,13 +1,9 @@
-
- 
-
 class ToDoList {
   constructor(description, id, completed) {
     this.description = description;
     this.id = id;
     this.completed = completed;
   }
-  
 
   static deleteTodo(el) {
     if (el.classList.contains('delete')) {
@@ -15,13 +11,30 @@ class ToDoList {
     }
   }
 
+  static localStorageMock = (function localStore() {
+    const data = {};
+
+    return {
+      getItem(key) {
+        return data[key];
+      },
+
+      setItem(key, value) {
+        data[key] = value;
+      },
+
+      getAll() {
+        return data;
+      },
+    };
+  }());
+
   static clearField() {
     document.getElementById('todo-input').value = '';
   }
 
   static setLocalStorage = (id, data) => {
     window.localStorage.setItem(id, JSON.stringify(data));
-    console.log("hello")
   };
 
   static getToDo() {
