@@ -1,9 +1,7 @@
 /* @jest-environment jsdom */
 import ToDoList from './crud.js';
 
-
 describe('functions local storage item', () => {
-  
   test('testing add function to add a task object in local storage', () => {
     const mockId = '333';
 
