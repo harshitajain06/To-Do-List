@@ -1,11 +1,9 @@
 /* @jest-environment jsdom */
 import ToDoList from './crud.js';
-// jest.mock('./crud.js')
+
 
 describe('functions local storage item', () => {
-  // beforeEach(() => {
-  //   window.localStorage.clear();
-  // });
+  
   test('testing add function to add a task object in local storage', () => {
     const mockId = '333';
 
